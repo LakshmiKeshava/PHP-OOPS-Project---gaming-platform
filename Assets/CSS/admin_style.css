@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #1b1b2f;
+    color: #c5c6c7;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Main Wrapper */
+.main-wrapper {
+    position: relative;
+    min-height: 100vh;
+    transition: margin-left 0.3s;
+}
+
+.main-wrapper.shifted {
+    margin-left: 250px;
+}
+
+/* Navbar */
+/* Navbar */
+.navbar {
+    background-color: #162447;
+    color: #e43f5a;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between; /* Space between menu icon and logout button */
+    align-items: center; /* Vertically center items */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    transition: margin-left 0.3s;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #e43f5a;
+    margin-right: 20px; /* Space between menu icon and heading */
+}
+
+h1 {
+    font-size: 24px;
+    color: #ffffff; /* Add color to the heading */
+    margin: 0;
+    flex: 1; /* Take up remaining space */
+    text-align: center; /* Center the heading horizontally */
+}
+
+/* Make sure the logout button is either removed or properly styled */
+.logout-button {
+    background-color: #e43f5a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: auto;
+    width:80px;
+   
+}
+
+.logout-button:hover {
+    background-color: #c72c41;
+}
+
+
+h1 {
+    font-size: 24px;
+    margin: 0 auto;  /* Center the heading */
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #162447;
+    padding: 60px 20px 20px;
+    transition: left 0.3s;
+    z-index: 800;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin: 20px 0;
+}
+
+.sidebar a {
+    color: #e43f5a;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f5f5f5;
+}
+
+/* Main Content */
+.main-content {
+    padding: 80px 40px 40px;  /* Added top padding to account for fixed navbar */
+}
+
+h2 {
+    color: #e43f5a;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: #c5c6c7;
+}
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #162447;
+    color: #c5c6c7;
+}
+
+.user-table th, .user-table td {
+    border: 1px solid #1f4068;
+    padding: 10px;
+    text-align: left;
+}
+
+.user-table th {
+    background-color: #1f4068;
+    color: #66fcf1;
+    font-weight: bold;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #1b1b2f;
+}
+
+.user-table tr:hover {
+    background-color: #1f4068;
+}
+
+.delete-btn {
+    background-color: #e43f5a;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+.edit-btn {
+    background-color: #336aa9;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.edit-btn:hover {
+    background-color: #c72c41;
+}
+
+.delete-btn:hover {
+    background-color: #b22222;
+}
+
+/* Form Styles */
+form {
+    background-color: #162447;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    display: block;
+    font-size: 16px;
+    color: #66fcf1;
+    margin-bottom: 5px;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #45a29e;
+    border-radius: 5px;
+    background-color: #1f2833;
+    color: #c5c6c7;
+}
+
+form button {
+    background-color: #e43f5a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #c72c41;
+}
+
+.back-button {
+    display: inline-block;
+    background-color: #45a29e;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #66fcf1;
+}
+.back-button {
+    background-color: #45a29e;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px; /* Space below the button */
+}
+
+.back-button:hover {
+    background-color: #66fcf1;
+}
+
+/* Success and Error Messages */
+.message {
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.message.success {
+    background-color: #66fcf1; /* Light green for success */
+    color: #0b0c10; /* Dark text for contrast */
+}
+
+.message.error {
+    background-color: #e43f5a; /* Red for error */
+    color: white;
+}
+
+/* Registration Form Styling */
+form {
+    margin-top: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: #1b1b2f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 18px;
+    color: #c5c6c7;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #1b1b2f;
+    color: #fff;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #e43f5a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #c72c41;
+}
+
+/* admin_style.css */
+
+/* Style for the registration success/failure message */
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* Success message */
+.message.success {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Error message */
+.message.error {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Style for the "Go back to Login" button */
+.message button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message button:hover {
+    background-color: #0056b3;
+}
+
+/* Success and Error Message Container */
+.message-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #162447;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+.success {
+    color: green;
+    background-color: #d4edda;
+    padding: 10px;
+    border: 1px solid #c3e6cb;
+    margin-bottom: 15px;
+}
+
+.error {
+    color: red;
+    background-color: #f8d7da;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 15px;
+}
+
+/* Success and Error Message Text */
+.message-container .success-message,
+.message-container .error-message {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.message-container .success-message {
+    background-color: #28a745; /* Success: Green */
+    color: #ffffff;
+}
+
+.message-container .error-message {
+    background-color: #dc3545; /* Error: Red */
+    color: #ffffff;
+}
+
+/* Back Button */
+.message-container .back-button {
+    display: inline-block;
+    background-color: #45a29e;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.message-container .back-button:hover {
+    background-color: #66fcf1;
+}
